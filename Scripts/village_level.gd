@@ -4,6 +4,7 @@ signal collected(count: int, total: int)
 signal gate_reached
 signal checkpoint_reached(point: Vector3)
 @export_range(1, 2) var stage: int = 1
+@export var baked: bool = false
 var count: int = 0
 var total: int = 8
 var coins: Array[Area3D] = []
@@ -17,6 +18,9 @@ var checkpoint_active: bool = false
 const COIN_POINTS: Array[Vector3] = [Vector3(-3,1,3), Vector3(3,1,-3), Vector3(0,1,-9), Vector3(-3,1,-16), Vector3(3,1,-22), Vector3(0,1,-27), Vector3(-3,1,-34), Vector3(3,1,-39)]
 
 func _ready() -> void:
+	if baked:
+		connect_baked_scene()
+		return
 	var ground_color := Color("708c58") if stage == 1 else Color("485b73")
 	for i: int in range(3):
 		var z: float = -18.0 * i
@@ -91,9 +95,34 @@ func _ready() -> void:
 	var veil := box("GateLight",Vector3(0,1.6,-42),Vector3(3,3,0.12),Color.WHITE,false)
 	veil.material_override = gate_material
 	gate_label = label3d("COLLECT ALL 8",Vector3(0,4.4,-42),32)
+	gate_label.name = "GateLabel"
 	prop("Bell Tower",Vector3(6,0,-41),7)
 	label3d("JUMP THE GAP",Vector3(0,1.7,-7),25)
 	label3d("SPACE + SPACE",Vector3(0,1.7,-25),25)
+
+func connect_baked_scene() -> void:
+	for node: Node in find_children("*", "Area3D",true,false):
+		var zone := node as Area3D
+		if zone.name.begins_with("Coin"):
+			coins.append(zone)
+			zone.body_entered.connect(func(body: Node3D) -> void: collect_coin(zone,body))
+		elif zone.has_meta("phase"):
+			hazards.append(zone)
+			zone.body_entered.connect(func(body: Node3D) -> void:
+				if body.is_in_group("player"): body.take_hit())
+		elif zone.name.begins_with("GapFlame"):
+			zone.body_entered.connect(func(body: Node3D) -> void:
+				if body.is_in_group("player"): body.take_hit())
+		elif zone.name == "Checkpoint":
+			zone.body_entered.connect(func(body: Node3D) -> void:
+				if body.is_in_group("player") and not checkpoint_active:
+					checkpoint_active = true
+					checkpoint_reached.emit(Vector3(0,0.3,-18)))
+	gate = get_node("ExitGate")
+	gate.body_entered.connect(_gate_entered)
+	gate_material = get_node("GateLight").material_override.duplicate()
+	get_node("GateLight").material_override = gate_material
+	gate_label = get_node("GateLabel")
 
 func _process(delta: float) -> void:
 	clock += delta

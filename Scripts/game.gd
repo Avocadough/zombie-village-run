@@ -1,6 +1,6 @@
 extends Node3D
 
-const PLAYER = preload("res://Scripts/zombie_player.gd")
+const PLAYER = preload("res://Scenes/zombie_player.tscn")
 const LEVELS = [preload("res://Scenes/village_dawn.tscn"), preload("res://Scenes/moonlit_keep.tscn")]
 var level: Node3D
 var player: CharacterBody3D
@@ -69,9 +69,7 @@ func load_stage(index: int) -> void:
 	level = LEVELS[index].instantiate()
 	level.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(level)
-	player = CharacterBody3D.new()
-	player.name = "ZombiePlayer"
-	player.set_script(PLAYER)
+	player = PLAYER.instantiate()
 	player.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(player)
 	player.position = Vector3(0,0.3,5)

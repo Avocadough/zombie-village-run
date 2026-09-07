@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djuwtinxn4ma7"
-path="res://.godot/imported/Zombie by bachosoftdesign - xqEzosAVYX_ColorPalette.jpg-66634e0037d24a7f47be076853d4e3d7.ctex"
+path.s3tc="res://.godot/imported/Zombie by bachosoftdesign - xqEzosAVYX_ColorPalette.jpg-66634e0037d24a7f47be076853d4e3d7.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "d2a7b96c9bb284011fb650d9514233c1"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Zombie by bachosoftdesign - xqEzosAVYX_ColorPalette.jpg"
-dest_files=["res://.godot/imported/Zombie by bachosoftdesign - xqEzosAVYX_ColorPalette.jpg-66634e0037d24a7f47be076853d4e3d7.ctex"]
+dest_files=["res://.godot/imported/Zombie by bachosoftdesign - xqEzosAVYX_ColorPalette.jpg-66634e0037d24a7f47be076853d4e3d7.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

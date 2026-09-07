@@ -16,6 +16,11 @@ var animation_state: String = ""
 
 func _ready() -> void:
 	add_to_group("player")
+	if has_node("Visual"):
+		visual = get_node("Visual")
+		animator = visual.find_child("AnimationPlayer",true,false) as AnimationPlayer
+		play_state("Idle")
+		return
 	var collision := CollisionShape3D.new()
 	var capsule := CapsuleShape3D.new()
 	capsule.radius = 0.32

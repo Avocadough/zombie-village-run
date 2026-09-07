@@ -59,6 +59,8 @@ func run() -> void:
 	check(game.stage == 1 and game.modal_title.text == "HOME AT LAST!","Two-level victory screen")
 	game.start_game()
 	check(game.stage == 0 and game.level.count == 0 and game.deaths == 0,"Replay resets campaign")
+	game.queue_free()
+	await frames(3)
 	print("VALIDATION_OK" if failures.is_empty() else "VALIDATION_FAILED: " + str(failures))
 	get_tree().quit(0 if failures.is_empty() else 1)
 
