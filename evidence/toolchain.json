@@ -1,0 +1,7 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "official_sha512_verified": {
+    "Godot_v4.7.2-stable_win64.exe.zip": true,
+    "Godot_v4.7.2-stable_export_templates.tpz": true
+  }
+}

@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Menu blocks movement
+PASS Player stands on real collision
+PASS Animation adapter Idle
+PASS Animation adapter Run
+PASS Animation adapter Jump
+PASS Animation adapter Flip
+PASS Animation adapter Hurt
+PASS Gate locked with missing shards
+PASS Third airborne jump rejected
+PASS Pause freezes timer
+PASS Damage respawns at checkpoint
+PASS Level 1 collects 8 shards through overlaps
+PASS Level 1 activates checkpoint
+PASS Level 1 reaches unlocked gate
+PASS Level 2 collects 8 shards through overlaps
+PASS Level 2 activates checkpoint
+PASS Level 2 reaches unlocked gate
+PASS Two-level victory screen
+PASS Replay resets campaign
+VALIDATION_OK
