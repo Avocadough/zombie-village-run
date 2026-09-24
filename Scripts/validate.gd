@@ -21,6 +21,8 @@ func run() -> void:
 	game.start_game()
 	await frames(30)
 	check(game.player.is_on_floor(),"Player stands on real collision")
+	check(game.player.has_node("Visual/Ember/EmberRig/Skeleton3D"),"Exercise 6 Ember is the active campaign player")
+	check(game.player.get_node("Visual/Ember/EmberRig/Skeleton3D").get_bone_count()==56,"Ember has 56 imported bones")
 	for state: String in ["Idle","Run","Jump","Flip","Hurt"]:
 		check(game.player.animator.has_animation("game/"+state),"Animation adapter " + state)
 	game.level._gate_entered(game.player)

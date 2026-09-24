@@ -1,6 +1,6 @@
 extends Node3D
 
-const PLAYER = preload("res://Scenes/zombie_player.tscn")
+const PLAYER = preload("res://Scenes/ember_player.tscn")
 const LEVELS = [preload("res://Scenes/village_dawn.tscn"), preload("res://Scenes/moonlit_keep.tscn")]
 var level: Node3D
 var player: CharacterBody3D
@@ -32,7 +32,7 @@ func _ready() -> void:
 	build_world()
 	build_ui()
 	load_stage(0)
-	show_modal("ZOMBIE\nVILLAGE RUN", "A little undead. A long way home.\n\nCollect 8 golden shards in each village.\nDodge red traps, jump the gaps, then find the gate.\n\nWASD / Arrows  ·  Move     Space × 2  ·  Double jump\nEsc / P  ·  Pause     R  ·  Restart level", "START ADVENTURE", start_game)
+	show_modal("ZOMBIE\nVILLAGE RUN", "Ember joins the adventure.\nBlender character + Mixamo Melee animations\n\nCollect 8 golden shards in each village.\nDodge red traps, jump the gaps, then find the gate.\n\nWASD / Arrows  ·  Move     Space × 2  ·  Double jump\nEsc / P  ·  Pause     R  ·  Restart level", "START ADVENTURE", start_game)
 
 func build_world() -> void:
 	environment = WorldEnvironment.new()

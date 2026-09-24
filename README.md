@@ -4,6 +4,14 @@ A two-level low-poly 3D platformer for Exercise 5 First 3D Game, built with **Go
 
 **Play:** https://avocadough.github.io/zombie-village-run/
 
+## Exercise 6 — Blender character in the original game
+
+**Ember is now the playable character in both existing villages.** The original Blender model and humanoid rig replace the earlier zombie player, with real Mixamo Melee Idle, Sprint, Jump and Hurt animations. The second jump retains the original controller's full-body flip. Movement, collisions, collectibles, checkpoints and two-stage progression stay in the original game.
+
+Editable Blender source: `Source/Ember/Ember.blend`. Active player scene: `Scenes/ember_player.tscn`. The earlier zombie scene is retained as the Exercise 5 version.
+
+Before running a fresh clone, execute `powershell -File Source/Ember/fetch_animations.ps1`, then `godot --headless --path . --script res://Scripts/prepare_ember.gd` (use your installed Godot executable path). This downloads the assignment's pinned upstream Melee library and prepares only the four source clips needed by the game. The public Web build is ready to play without these steps.
+
 ## How to play
 
 - WASD or arrow keys: move.
@@ -18,7 +26,7 @@ Village Dawn introduces the path, gaps and moving spikes. Moonlit Keep changes t
 ## Open and export
 
 Import `project.godot` with Godot 4.7.2. Main scene: `Scenes/main.tscn`.
-The two stage resources are `Scenes/village_dawn.tscn` and `Scenes/moonlit_keep.tscn`; their geometry is saved as editable scene nodes. `Scripts/village_level.gd` connects gameplay events at runtime. `Scenes/zombie_player.tscn` contains the replacement character and animation library.
+The two stage resources are `Scenes/village_dawn.tscn` and `Scenes/moonlit_keep.tscn`; their geometry is saved as editable scene nodes. `Scripts/village_level.gd` connects gameplay events at runtime. `Scenes/ember_player.tscn` is the active player; `Scripts/ember_player.gd` maps Melee tracks through the supplied Mixamo BoneMap.
 Install the matching Web export templates, then export the `Web` preset to `docs/index.html`.
 The Web preset uses Compatibility rendering and disables threads for GitHub Pages.
 

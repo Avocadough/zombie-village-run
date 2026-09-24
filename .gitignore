@@ -21,3 +21,4 @@ mono_crash.*.json
 evidence/*.log
 
 submission/
+Assets/Ember/DemoMelee.res
