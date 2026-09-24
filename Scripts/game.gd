@@ -261,7 +261,7 @@ func build_ui() -> void:
 	stack.add_child(secondary)
 	secondary.hide()
 	var credits := Label.new()
-	credits.text = "Starter: SD Studios  ·  Zombie: bachosoftdesign (CC BY)\nVillage: Quaternius (CC0)  ·  Models from Poly Pizza"
+	credits.text = "Starter: SD Studios  ·  Ember: original Blender character\nMotion: Mixamo / Melee Library  ·  Village: Quaternius (CC0)"
 	credits.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	credits.add_theme_font_size_override("font_size",12)
 	credits.add_theme_color_override("font_color",Color("93a8b0"))
