@@ -2,7 +2,8 @@
 
 A two-level low-poly 3D platformer for Exercise 5 First 3D Game, built with **Godot 4.7.2** from the supplied SD Studios starter project.
 
-**Play:** https://avocadough.github.io/zombie-village-run/
+[Play the browser demo](https://avocadough.github.io/zombie-village-run/) · [Credits](CREDITS.md) · [Acceptance evidence](evidence/ACCEPTANCE.md)
+
 
 ## Exercise 6 — Blender character in the original game
 
@@ -36,6 +37,15 @@ godot --headless --path . --scene res://Scenes/validate.tscn
 ```
 
 GitHub Pages serves the committed `/docs` directory on `main`. Re-export and push that directory when changing the game. Serve the files over HTTP; opening the HTML directly from disk does not load WebAssembly correctly.
+
+## Project map
+
+| Path | Contents |
+| --- | --- |
+| [project.godot](project.godot), [Scenes/](Scenes/) | Godot project, the two levels and player scenes |
+| [Scripts/](Scripts/) | Player, stage and preparation scripts |
+| [Source/Ember/](Source/Ember/) | Editable Blender character and animation-fetch script |
+| [docs/](docs/), [evidence/](evidence/) | Web export and recorded project checks |
 
 ## Assignment coverage
 
