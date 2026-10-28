@@ -1,8 +1,14 @@
-# Zombie Village Run
+<div align="center">
+  <h1>Zombie Village Run</h1>
+  <p>A two-level low-poly 3D platformer.</p>
+  <p>
+    <img src="https://img.shields.io/badge/Godot-4.7.2-478CBF" alt="Godot 4.7.2">
+  </p>
+  <p><a href="https://avocadough.github.io/zombie-village-run/">Play the browser demo</a> &nbsp;·&nbsp; <a href="https://github.com/Avocadough/zombie-village-run/blob/main/CREDITS.md">Credits</a> &nbsp;·&nbsp; <a href="https://github.com/Avocadough/zombie-village-run/blob/main/evidence/ACCEPTANCE.md">Acceptance evidence</a></p>
+</div>
 
 A two-level low-poly 3D platformer for Exercise 5 First 3D Game, built with **Godot 4.7.2** from the supplied SD Studios starter project.
 
-[Play the browser demo](https://avocadough.github.io/zombie-village-run/) · [Credits](CREDITS.md) · [Acceptance evidence](evidence/ACCEPTANCE.md)
 
 
 ## Exercise 6 — Blender character in the original game
